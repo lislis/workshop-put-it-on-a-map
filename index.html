@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Put it on a map!</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+            integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+            crossorigin=""></script>
+    <style>
+     * { box-sizing: border-box; }
+     body {
+       margin: 0;
+       padding: 1rem;
+       height: 100vh;
+     }
+     #mapid { height: 100%; }
+    </style>
+
+  </head>
+  <body>
+    <div id="mapid"></div>
+
+    <script>
+     var mymap = L.map('mapid').setView([37.985, 23.729], 16);
+
+     /*
+     L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg', {
+       attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.',
+       maxZoom: 18
+     }).addTo(mymap);
+     */
+
+     L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
+         attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.',
+         maxZoom: 18
+     }).addTo(mymap);
+
+
+     var locations = [
+       {name: "Eight", address: "Polytechniou 8", lat: 37.98821, lon: 23.72967},
+       {name: "AMOQA", address: "Patission 14", lat: 37.98498, lon: 23.72987},
+       {name: "Communitism", address: "Keramikou 28", lat: 37.983016, lon: 23.721654},
+     ];
+
+     locations.forEach((x) => {
+       L.marker([x.lat, x.lon]).bindPopup(`<h2>${x.name}</h2><p>${x.address}</p>`).addTo(mymap);
+     });
+
+     window.fetch('epivevaiwmenesparanomespinakides.csv')
+           .then((response) => response.text())
+           .then((data) => {
+               var rows = data.split('\n').slice(1).map(x => x.split(','));
+
+               rows.forEach((x) => {
+                   var lat =  parseFloat(x[2], 4);
+                   var lon = parseFloat(x[3], 4);
+                   if (lat && lon) {
+                       L.circle([lat, lon], {
+	                   color: '#ac00e6',
+	                   fillColor: '#ac00e6',
+	                   fillOpacity: 0.4,
+	                   radius: 200
+                       }).bindPopup(`<p>${x[5]}, ${x[6]}</p><p>"${x[4]}"</p>`).addTo(mymap);
+                   }
+               });
+           });
+
+    </script>
+  </body>
+</html>
