@@ -24,51 +24,8 @@
   <body>
     <div id="mapid"></div>
 
-    <script>
-     var mymap = L.map('mapid').setView([37.985, 23.729], 16);
-
-     /*
-     L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg', {
-       attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.',
-       maxZoom: 18
-     }).addTo(mymap);
-     */
-
-     L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
-         attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.',
-         maxZoom: 18
-     }).addTo(mymap);
-
-
-     var locations = [
-       {name: "Eight", address: "Polytechniou 8", lat: 37.98821, lon: 23.72967},
-       {name: "AMOQA", address: "Patission 14", lat: 37.98498, lon: 23.72987},
-       {name: "Communitism", address: "Keramikou 28", lat: 37.983016, lon: 23.721654},
-     ];
-
-     locations.forEach((x) => {
-       L.marker([x.lat, x.lon]).bindPopup(`<h2>${x.name}</h2><p>${x.address}</p>`).addTo(mymap);
-     });
-
-     window.fetch('epivevaiwmenesparanomespinakides.csv')
-           .then((response) => response.text())
-           .then((data) => {
-               var rows = data.split('\n').slice(1).map(x => x.split(','));
-
-               rows.forEach((x) => {
-                   var lat =  parseFloat(x[2], 4);
-                   var lon = parseFloat(x[3], 4);
-                   if (lat && lon) {
-                       L.circle([lat, lon], {
-	                   color: '#ac00e6',
-	                   fillColor: '#ac00e6',
-	                   fillOpacity: 0.4,
-	                   radius: 200
-                       }).bindPopup(`<p>${x[5]}, ${x[6]}</p><p>"${x[4]}"</p>`).addTo(mymap);
-                   }
-               });
-           });
-
-    </script>
+    <script src="example-1.js"></script>
+    <!--<script src="example-2.js"></script>-->
+    <!--<script src="example-3.js"></script>-->
   </body>
 </html>

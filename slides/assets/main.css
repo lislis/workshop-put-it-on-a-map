@@ -103,6 +103,10 @@ a {
   text-align: center;
 }
 
+.small {
+  font-size: 0.6rem;
+}
+
 
 .remark-slide-content {
   background-color: #181818;
