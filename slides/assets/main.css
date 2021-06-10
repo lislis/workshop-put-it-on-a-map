@@ -55,6 +55,10 @@ body {
   padding-right: 0.8rem;
 }
 
+em {
+  font-style: italic;
+}
+
 blockquote {
   letter-spacing: -2px;
   font-size: 3rem;
@@ -63,7 +67,6 @@ blockquote {
 }
 
 .cite {
-  text-align: center;
   font-size: 0.8rem;
 }
 
@@ -128,4 +131,23 @@ table td {
 .sec.remark-slide-content {
   background-color: var(--link-color);
   color: #181818;
+}
+
+.sec a {
+  color: #181818;
+}
+
+.flex-between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 45vh;
+}
+
+
+code {
+  display: inline-block;
+  color: #181818;
+  padding: 0.3em;
+  background: var(--link-color);
 }

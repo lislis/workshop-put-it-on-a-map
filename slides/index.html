@@ -22,17 +22,61 @@
 
       ## $ whoami
 
-      - Feminizidmap
+      --
+
+      background-image: url(assets/lisa-passing-cc-by-leonard-wolf-small.JPG)
+      background-position: 90%  50%
+
+      .half[
+      - 2018 - 2020 Open Knowledge Foundation
+
+        [Datenschule](https://datenschule.de)
+      ]
+
+      --
+
+      background-image: url(assets/screen-feminizidmap.png)
+      background-position: 90%  50%
+
+      .half[
+      - seit 2020 Creative Technologist
+
+        [Feminizidmap](https://feminizidmap.de)
+      ]
 
       ---
 
-      Wer seid ihr?
+      class: middle
+
+      ## Wer seid ihr?
+
+      --
+
+      Was interessiert euch am Workshop?
+
+      Was ist euer Lieblingsort?
 
       ---
 
       class: center, middle, sec
 
-      # (Geo)daten und ich
+      # Daten sind überall!
+
+      --
+
+      (Geo)daten und ich
+
+      ---
+
+      background-image: url(assets/weather.jpg)
+
+      ---
+
+      background-image: url(assets/groceries.jpg)
+
+      ---
+
+      background-image: url(assets/maps.jpg)
 
       ---
 
@@ -42,15 +86,86 @@
 
       ---
 
-      class: center, middle, sec
+      class: sec
+      background-image: url(assets/open-data.webp)
 
-      # Daten und Karten
+      .flex-between[
+      ## Arten von Open Data
+
+      .cite[
+      [Grafik: https://blog.okfn.org/2013/10/03/defining-open-data/](https://blog.okfn.org/2013/10/03/defining-open-data/)
+      ]
+      ]
+
+      ---
+
+      background-image: url(assets/toiletten.png)
+      background-position: 50% 80%
+      background-size: 70%
+
+      ## Technische Aspekte
+
+      Maschinenlesbar vs Menschenlesbar
+
+      --
+
+      background-image: url(assets/dronen.png)
+      background-position: 100% 50%
+      background-size: contain
+
+      ---
+
+      background-image: url(assets/cc_license_spectrum-633x1024.png)
+      background-position: 90% 50%
+      background-size: contain
+
+      .flex-between[
+      .half[
+      ## Rechtliche Aspekte
+
+      Lizenzen (zB Creative Commons)
+      ]
+
+      .cite[
+      ["Creative Commons License Spectrum" by Shaddim (CC BY)](https://commons.wikimedia.org/wiki/File:Creative_commons_license_spectrum.svg)
+      ]
+      ]
+
+      ---
+
+      ## Offene Daten finden
 
       ---
 
       class: center, middle, sec
 
       # Open Street Map
+
+      ---
+
+      background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg)
+      background-position: 80% 50%
+
+
+      ## OSM ([osm.org](https://osm.org))
+
+      .half[
+      "[...] ist ein freies Projekt, das frei nutzbare Geodaten sammelt, strukturiert und für die Nutzung durch jedermann in einer Datenbank vorhält (Open Data). Diese Daten stehen unter einer freien Lizenz, der Open Database License. Kern des Projekts ist also eine offen zugängliche Datenbank aller beigetragenen Geoinformationen." -  [Wikipedia](https://de.wikipedia.org/wiki/OpenStreetMap)
+      ]
+
+      ---
+
+      background-image: url(assets/wheelmap.png)
+      background-size: contain
+
+      ## [Wheelmap](https://wheelmap.org/)
+
+      ---
+
+      background-image: url(assets/mundraub.png)
+      background-size: contain
+
+      ## [Mundraub](background-size: contain)
 
       ---
 
@@ -61,29 +176,111 @@
 
       ---
 
+      background-image: url(https://notanatlas.org/wp-content/uploads/2018/09/book_Cover.png)
+      background-position: 90% 50%
 
-      class: center, middle, sec
+      ## Critical Mapping
 
-      # Geodaten und ich
+      .half[
+      Kritik, Lehrmittel, Sichtbarmachung, Selbstreflektion, politisches Druckmittel und aktivistisches Werkzeug
+
+      https://notanatlas.org/
+      ]
 
       ---
 
+      background-image: url(assets/berlin-besetzt.png)
+
+      [Berlin Besetzt](https://www.berlin-besetzt.de/)
+
+      ---
 
       class: center, middle, sec
 
       # Am Anfang steht die Tabelle
 
+      --
+
       Daten selber sammeln
 
       ---
 
-      Koordinaten
+      class: center, middle
+
+      Excel
+
+      Libre/Open Office Calc
+
+      Google Spreadsheets
+
+      euer Texteditor
+
+      --
+
+      # ➯ CSV
 
       ---
 
-      class: center, middle, sec
+      ---
+
+      class: center, middle
 
       # Tech check!
+
+      --
+
+      Texteditor installiert?
+
+      --
+
+      Python bzw Webserver startklar?
+
+      ---
+
+      class: center, middle
+
+      ## [Code herunterladen!](https://github.com/lislis/workshop-put-it-on-a-map/archive/refs/heads/main.zip)
+
+      --
+
+      Ordner entpacken
+
+      --
+
+      Entpackten Ordner in Texteditor öffnen
+
+      ---
+
+      # Im Terminal öffnen
+
+      - Terminal (Linux, Mac) bzw Command Prompt (Windows) öffnen
+
+      - `cd` und Leerzeichen schreiben
+
+      - den entpackten Code Ordner in das Terminal ziehen
+
+      - Enter drücken
+
+      ---
+
+      # Webserver starten
+
+      ```
+      # Python 3.x
+      python -m http.server
+      ```
+
+      oder
+
+      ```
+      # Python 2.x
+      python -m SimpleHTTPServer 8080
+
+      ```
+
+      ---
+
+      Im Browser `localhost:8080` aufrufen
 
       ---
 
@@ -93,9 +290,17 @@
 
       ---
 
-      Koordinaten
+      ## Ein bisschen Code
 
-      Zoom
+      - HTML
+
+      - JavaScript
+
+      - Leaflet.js
+
+      ---
+
+      ## Womit können spielen?
 
       Maptiles
 
